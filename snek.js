@@ -7,9 +7,10 @@ pypyjs.ready().then(function() {
     console.log("hiss pypy")
 });
 
-client.on("ready", () => {
-    console.log("hiss connected");
- });
+var bot = new Discord.Client({
+    token: config.token,
+    autorun: true
+})
 
 client.on("message", (message) => {
 
@@ -18,5 +19,3 @@ client.on("message", (message) => {
         return;
     } 
 });
-
-client.login(config.token);
