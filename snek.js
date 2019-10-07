@@ -18,7 +18,7 @@ client.on('disconnect', function(erMsg, code) {
 
 client.on("message", (message) => {
 
-    if (message.startsWith("/python")) {
+    if (message.content.indexOf("/python") == 0) {
         message.channel.send(pypyjs.exec('print("memes")'));
         return;
     } 
