@@ -15,7 +15,7 @@ pypyjs.read().then(function() {
 bot.on('message', function (user, userID, channleID, message, evt) {
 
     if (message.startsWith("/python")) {
-        message.channel.send(pypyjs.exec(message.content));
+        message.channel.send(pypyjs.exec(message.content.substring(8)));
         return;
     } 
 });
