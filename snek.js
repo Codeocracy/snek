@@ -4,11 +4,11 @@ const config = require("./config.json");
 const pypyjs = require("./lib/pypyjs.js");
 
 pypyjs.ready().then(function() {
-    console.log("hiss")
+    console.log("hiss pypy")
 });
 
 client.on("ready", () => {
-    console.log("hiss");
+    console.log("hiss connected");
  });
 
 client.on('disconnect', function(erMsg, code) {
