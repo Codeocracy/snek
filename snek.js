@@ -12,7 +12,7 @@ var bot = new Discord.Client({
     autorun: true
 })
 
-client.on("message", (message) => {
+bot.on("message", function(user, userID, channelID, message, evt) {
 
     if (message.content.indexOf("/python") == 0) {
         message.channel.send(pypyjs.exec('print("memes")'));
