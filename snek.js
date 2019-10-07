@@ -4,7 +4,7 @@ const config = require("./config.json");
 const pypyjs = require("./lib/pypyjs.js");
 
 pypyjs.ready().then(function() {
-    // this callback is fired when the interpreter is ready for use.
+    console.log("hiss")
 });
 
 client.on("ready", () => {
