@@ -11,11 +11,6 @@ client.on("ready", () => {
     console.log("hiss connected");
  });
 
-client.on('disconnect', function(erMsg, code) {
-	console.log('---- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '----');
-	client.connect();
-});
-
 client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
