@@ -3,10 +3,6 @@ const client = new Discord.Client();
 const config = require("config.json");
 const pypyjs = require("./lib/pypyjs.js");
 
-pypyjs.read().then(function() {
-
-})
-
 client.on("message", (message) => {
 
     if (message.startsWith("/python")) {
