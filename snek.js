@@ -1,6 +1,5 @@
 var Discord = require("discord.io");
-var config = require(".config.json");
-var fs = require('fs');
+var config = require("config.json");
 const pypyjs = require("./lib/pypyjs.js");
 
 var bot = new Discord.Client({
