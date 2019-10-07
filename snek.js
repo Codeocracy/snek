@@ -1,4 +1,4 @@
-var Discord = require("discord.io");
+var Discord = require("discord.js");
 var config = require("config.json");
 const pypyjs = require("./lib/pypyjs.js");
 
@@ -11,7 +11,7 @@ pypyjs.read().then(function() {
 
 })
 
-bot.on('message', function (user, userID, channleID, message, evt) {
+bot.on('message', (message) => {
 
     if (message.startsWith("/python")) {
         message.channel.send(pypyjs.exec('print("memes")');
