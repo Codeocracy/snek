@@ -5,9 +5,10 @@ const pypyjs = require("./lib/pypyjs.js");
 
 pypyjs.ready().then(function() {
     console.log("hiss");
+    client.login(config.token);
 });
 
-client.login(config.token);
+
 
 client.on("ready", () => {
     console.log("hiss discord");
