@@ -1,13 +1,13 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const config = require("./snekConfig.json");
+
 const python = require("./python.js")
 
 client.on("ready", () => {
     console.log("hiss discord");
 });
 
-
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const config = require("./snekConfig.json");
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
