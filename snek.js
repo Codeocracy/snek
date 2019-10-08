@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./snekConfig.json");
-//const pypyjs = require("./lib/pypyjs.js");
+const pypyjs = require("./lib/pypyjs.js");
 
 client.on("ready", () => {
     console.log("hiss discord");
