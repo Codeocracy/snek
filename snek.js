@@ -22,7 +22,7 @@ process.on('unhandledRejection', (reason, p) => {
 client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
-        message.channel.send(pypyjs.exec(message.content.substring(8)));
+        message.channel.send(toString(pypyjs.exec(message.content.substring(8))));
         return;
     } 
 });
