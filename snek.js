@@ -32,9 +32,12 @@ function snek(command) {
 client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
-        snek(message.content.substring(8)).then(function(result){
-            message.channel.send(result.toString());
-        });
+        try {            
+            let result = await pypyjs.exec(message.content.substring(8));
+             message.channel.send(result.toString());
+        }catch(e){
+            message.channel.send(e.toString());
+        }
+    };
         return;
-    } 
-});
+    });
