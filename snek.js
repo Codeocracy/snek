@@ -19,10 +19,16 @@ process.on('unhandledRejection', (reason, p) => {
     // application specific logging, throwing an error, or other logic here
   });
 
+function snek(command) {
+    return pypyjs.ready().then(function() {
+        return pypyjs.exec(command).toString();
+    })
+}
+
 client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
-        message.channel.send(pypyjs.exec(message.content.substring(8)).toString());
+        message.channel.send(snek(message.content.substring(8)));
         return;
     } 
 });
