@@ -29,7 +29,7 @@ function snek(command) {
     });
 }
 
-client.on("message", (message) => {
+client.on("message", async (message) => {
 
     if (message.content.indexOf("/python") == 0) {
         try {            
