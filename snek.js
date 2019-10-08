@@ -3,13 +3,13 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const pypyjs = require("./lib/pypyjs.js");
 
+client.on("ready", () => {
+    console.log("hiss discord");
+});
+
 pypyjs.ready().then(function() {
     console.log("hiss pypy")
 });
-
-client.on("ready", () => {
-    console.log("hiss discord");
-  });
 
 client.on("message", (message) => {
 
