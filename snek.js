@@ -20,7 +20,7 @@ process.on('unhandledRejection', (reason, p) => {
   });
 
 function snek(command) {
-    return pypyjs.ready().then(function() {
+    pypyjs.ready().then(function() {
         return pypyjs.exec(command).toString();
     })
 }
