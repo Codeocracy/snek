@@ -20,15 +20,21 @@ process.on('unhandledRejection', (reason, p) => {
   });
 
 function snek(command) {
-    pypyjs.ready().then(function() {
+    return pypyjs.ready().then(function() {
+        return pypyjs.set('command', command)
+    }).then(function() {
         return pypyjs.exec(command);
-    })
+    }).then(function() {
+        return pypyjs.get('command')
+    });
 }
 
 client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
-        console.log(snek(message.content.substring(8)));
+        snek(message.content.substring(8)).then(function(result){
+            message.channel.send(result);
+        });
         return;
     } 
 });
