@@ -33,7 +33,7 @@ client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
         snek(message.content.substring(8)).then(function(result){
-            message.channel.send(result);
+            message.channel.send(result.toString());
         });
         return;
     } 
