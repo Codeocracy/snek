@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const config = require("./config.json");
+const config = require("./snekConfig.json");
 const pypyjs = require("./lib/pypyjs.js");
 
 client.on("ready", () => {
-    //console.log("hiss discord");
+    console.log("hiss discord");
 });
 
 pypyjs.ready().then(function() {
-    //console.log("hiss pypy")
+    console.log("hiss pypy")
 });
 
 process.on('unhandledRejection', (reason, p) => {
