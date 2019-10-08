@@ -7,9 +7,9 @@ client.on("ready", () => {
     console.log("hiss discord");
 });
 
-//pypyjs.ready().then(function() {
-//    console.log("hiss pypy")
-//});
+pypyjs.ready().then(function() {
+    console.log("hiss pypy")
+});
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
