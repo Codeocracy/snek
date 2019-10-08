@@ -21,14 +21,14 @@ process.on('unhandledRejection', (reason, p) => {
 
 function snek(command) {
     pypyjs.ready().then(function() {
-        return pypyjs.exec(command).toString();
+        return pypyjs.exec(command);
     })
 }
 
 client.on("message", (message) => {
 
     if (message.content.indexOf("/python") == 0) {
-        message.channel.send(snek(message.content.substring(8)));
+        console.log(snek(message.content.substring(8)));
         return;
     } 
 });
