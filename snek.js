@@ -1,13 +1,13 @@
-
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const config = require("./snekConfig.json");
 const pypyjs = require("./lib/pypyjs.js");
 
 pypyjs.ready().then(function() {
     console.log("hiss");
 });
 
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const config = require("./snekConfig.json");
+client.login(config.token);
 
 client.on("ready", () => {
     console.log("hiss discord");
@@ -25,5 +25,3 @@ client.on("message", (message) => {
         return;
     } 
 });
-
-client.login(config.token);
