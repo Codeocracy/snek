@@ -33,8 +33,11 @@ client.on("message", async (message) => {
 
     if (message.content.indexOf("/python") == 0) {
         try {            
-            let result = await snek(message.content.substring(8));
-             message.channel.send(result.toString());
+            //let result = await snek(message.content.substring(8));
+            //message.channel.send(result.toString());
+            snek(message.content.substring(8)).then(function(result) {
+                message.channel.send(result)
+            })
         }catch(e){
             message.channel.send(e.toString());
         }
