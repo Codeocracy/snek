@@ -19,7 +19,7 @@ process.on('unhandledRejection', (reason, p) => {
     // application specific logging, throwing an error, or other logic here
   });
 
-/*
+
 function snek(command) {
     return pypyjs.ready().then(function() {
         return pypyjs.set('command', command)
@@ -29,7 +29,7 @@ function snek(command) {
         return pypyjs.get('command')
     });
 }
-*/
+
 
 // Initialize the widget.
 var terminal = $('#terminal').jqconsole('', '>>> ');
@@ -41,33 +41,17 @@ pypyjs.stdout = pypyjs.stderr = function(data) {
 
 client.on("message", async (message) => {
 
-    /*if (message.content.indexOf("/python") == 0) {
+    if (message.content.indexOf("/python") == 0) {
         try {            
-            //let result = await snek(message.content.substring(8));
-            //message.channel.send(result.toString());
-            snek(message.content.substring(8)).then(function(result) {
-                message.channel.send(result)
-            })
+            let result = await pypyjs.repl(message.content.substring(8));
+            message.channel.send(result.toString());
+            //snek(message.content.substring(8)).then(function(result) {
+            //    message.channel.send(result)
+            //})
         }catch(e){
             message.channel.send(e.toString());
         }
     };
         return;
-        */
-
-
-    // Interact by taking input from the console prompt.
-    pypyjs.repl(function(ps1) {
-
-        // The argument is ">>> " or "... " depending on REPL state.
-        jqconsole.SetPromptLabel(ps1);
-    
-        // Return a promise if prompting for input asynchronously.
-        return new Promise(function(resolve, reject) {
-            jqconsole.Prompt(true, function (input) {
-                resolve(input);
-            });
-        });
-    });
-    
+        
 });
