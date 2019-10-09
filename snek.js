@@ -30,15 +30,6 @@ function snek(command) {
     });
 }
 
-
-// Initialize the widget.
-var terminal = $('#terminal').jqconsole('', '>>> ');
-
-// Hook up output streams to write to the console.
-pypyjs.stdout = pypyjs.stderr = function(data) {
-  terminal.Write(data, 'jqconsole-output');
-}
-
 client.on("message", async (message) => {
 
     if (message.content.indexOf("/python") == 0) {
