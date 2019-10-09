@@ -35,7 +35,7 @@ client.on("message", async (message) => {
     if (message.content.indexOf("/python") == 0) {
         try {            
             let result = await pypyjs.repl(message.content.substring(8));
-            message.channel.send(result.toString());
+            message.channel.send(result);
             //snek(message.content.substring(8)).then(function(result) {
             //    message.channel.send(result)
             //})
