@@ -23,7 +23,7 @@ function snek(command) {
     return pypyjs.ready().then(function() {
         return pypyjs.set('command', command)
     }).then(function() {
-        return pypyjs.exec(command);
+        return pypyjs.exec('command');
     }).then(function() {
         return pypyjs.get('command')
     });
